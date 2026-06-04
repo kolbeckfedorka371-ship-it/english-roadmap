@@ -11,20 +11,11 @@
     <link rel="manifest" href="/english-roadmap/manifest.json">
     <title>English Roadmap — 通过演讲学英语</title>
     <script>
-      // PWA install prompt
       let deferredPrompt;
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        window.__pwaInstallable = true;
-      });
-      // Register service worker
+      window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/english-roadmap/sw.js').catch(() => {});
-        });
+        window.addEventListener('load', () => { navigator.serviceWorker.register('/english-roadmap/sw.js').catch(() => {}); });
       }
-      // Theme initialization
       const savedTheme = localStorage.getItem('theme') || 'dark';
       document.documentElement.className = savedTheme;
     </script>
