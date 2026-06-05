@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/english-roadmap/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="通过世界经典演讲学英语 — 从零基础到六级 · 8500词汇">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="通过世界经典演讲学英语 — 从零基础到六级 · 8500词汇 · 完全免费">
+    <meta name="theme-color" content="#050510">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta property="og:title" content="English Roadmap — 通过演讲学英语">
+    <meta property="og:description" content="通过世界经典演讲学英语，从零基础到大学英语六级。8500词汇，31个视频，完全免费。">
+    <meta property="og:type" content="website">
     <link rel="manifest" href="/english-roadmap/manifest.json">
     <title>English Roadmap — 通过演讲学英语</title>
     <script>
@@ -19,10 +22,18 @@
       const savedTheme = localStorage.getItem('theme') || 'dark';
       document.documentElement.className = savedTheme;
     </script>
-    <script type="module" crossorigin src="/english-roadmap/assets/index-Cep6XLIz.js"></script>
-    <link rel="stylesheet" crossorigin href="/english-roadmap/assets/index-D3m6FaWg.css">
+    <style>
+      body { background: #050510; margin: 0; }
+      #app-loader { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #050510; z-index: 9999; }
+      #app-loader .spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.05); border-top-color: #6366f1; border-radius: 50%; animation: spin 0.8s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+    <script type="module" crossorigin src="/english-roadmap/assets/index-WY9lixqY.js"></script>
+    <link rel="stylesheet" crossorigin href="/english-roadmap/assets/index-DgM-CvxV.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div id="app-loader"><div class="spinner"></div></div>
+    </div>
   </body>
 </html>
